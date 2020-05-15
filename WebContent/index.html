@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>Enterprise Project</title>
+<link rel="stylesheet"
+      href="styles.css"
+      type="text/css"/>
+      
+<!-- Imports all the .js files which will run functions/methods when the onclick is pressed -->
+<script src="./scripts/ajax-utils.js"
+        type="text/javascript"></script>
+<script src="./scripts/search-film.js"
+        type="text/javascript"></script>
+<script src="./scripts/retrieve-all-films.js"
+        type="text/javascript"></script>
+<script src="./scripts/delete-a-film.js"
+        type="text/javascript"></script>
+<script src="./scripts/update-a-film.js"
+        type="text/javascript"></script>  
+<script src="./scripts/add-a-film.js"   
+        type="text/javascript"></script>
+</head>
+	<body>
+	
+	<!-- The Title of the project -->
+		<div align="center">
+		<table border="5">
+		<tr>
+		<th class="title">Enterprise Project Dan Birks 19092129</th>
+		</tr>
+		</table>
+
+<p></p>
+
+	<fieldset>
+		<legend>Search Film By ID</legend>
+		<p></p>
+			<!-- Returns it to the same page for ajax  -->
+			
+			<form action="#">
+				<label>Search Film By ID:</label>
+				
+				<!-- The ID tag is called in the onclick to refer to the input the client adds in the browser -->
+				<input type="text" id="searchByIdTextBox"/>
+				
+				<!-- Onclick name will be referred to in the js files -->
+				<input type="button" value="Search JSON"
+			  	onclick='searchFilmByJson("searchByFilmIdtable", "searchByIdTextBox")'/>
+			  	
+			  	<input type="button" value="Search XML"
+			  	onclick='searchFilmByXml("searchByFilmIdtable", "searchByIdTextBox")'/>
+			  	
+			  	<input type="button" value="Search Plain"
+			  	onclick='searchFilmsByText("searchByFilmIdtable", "searchByIdTextBox")'/>
+	
+</form>
+<!-- Div is used to determine the location of where the results will be diplayed on the browser page -->
+<div id="searchByFilmIdtable"></div>
+</fieldset>
+<p></p>
+
+	<fieldset>
+		<legend>Retrieve All Films</legend>
+		<p></p>
+			<!-- Returns it to the same page for ajax  -->	
+			<form action="#">
+				<label>Retrieve All Films:</label>
+				
+				<!-- The Buttons pass display data to the appripiate js file via onclick name -->
+				<input type="button" value="Search JSON"
+			  	onclick='retrieveAllFilmsByJson("retrieveResultsTable")'/>
+			  	
+			  	<input type="button" value="Search XML"
+			  	onclick='retrieveAllFilmsByXml("retrieveResultsTable")'/>
+			  	
+			  	<input type="button" value="Search Plain"
+			  	onclick='retrieveAllFilmsByText("retrieveResultsTable")'/>
+
+</form>
+<p></p>
+<!-- Div is used to determine the location of where on the results will be diplayed on the browser page -->
+<div id="retrieveResultsTable"></div>
+</fieldset>
+
+  <p></p>
+
+	<fieldset>
+		<legend>Delete a Film in the Database</legend>
+		<p></p>
+			<!-- Returns it to the same page for ajax  -->
+			
+			<form action="#">
+				<label>Delete A Film via ID:</label>
+				
+				<!-- The ID tag is called in the onclick to refer to the input the client adds in the browser -->
+				<input type="text" id="deleteByIdFilm"/>
+				
+				<!-- The Buttons pass display data to the appripiate js file via onclick name -->
+				<input type="button" value="Delete"
+			  	onclick='deleteFilmById("deleteByIdFilm", "displayDeletedFilm")'/>
+
+</form>
+<p></p>
+<!-- Div is used to determine the location of where on the results will be diplayed on the browser page -->
+<div id="displayDeletedFilm"></div>
+</fieldset>
+	
+	<p></p>
+		<fieldset>
+			<legend>Add a Film to the Database</legend>
+	<p></p>			
+				<!-- Returns it to the same page for ajax to display when its passed through the onclick method -->
+				<form action="#">
+				
+				<!-- All of the client inputs -->
+			
+				<label> Add Film ID:</label>
+				<input type="text" id="id"/>
+				
+				<label>Add Film Title:</label>
+				<input type="text" id="title"/>
+	<p></p>
+				<label>Add Film Year:</label>
+				<input type="text" id="year"/>
+				
+				<label>Add Film Director:</label>
+				<input type="text" id="director"/>
+	<p></p>		
+				<label>Add Film Stars:</label>
+				<input type="text" id="stars"/>
+				
+				<label>Update Film Review:</label>
+				<input type="text" id="review"/>
+				
+	<p></p>
+			<!-- The Buttons pass display data to the appripiate js file via onclick name -->
+			<input type="button" value="Add Film"
+			  	onclick='addNewFilmToJson("addFilmToDatabase", "id", "title", "year", "director", "stars", "review")'/>
+			  	
+			  	
+</form>
+<!-- Div is used to determine the location of where on the results will be diplayed on the browser page -->
+<div id="addFilmToDatabase"></div>
+</fieldset>
+	
+	<p></p>
+		<fieldset>
+			<legend>Update a Film to the Database</legend>
+	<p></p>
+				<!-- Returns it to the same page for ajax to display when its passed through the onclick method -->
+				<form action="#">
+			
+				<!-- All of the client inputs -->
+			
+				<label> Update Film ID:</label>
+				<input type="text" id="id1"/>
+				
+				<label>Update Film Title:</label>
+				<input type="text" id="title1"/>
+	<p></p>
+				<label>Update Film Year:</label>
+				<input type="text" id="year1"/>
+				
+				<label>Update Film Director:</label>
+				<input type="text" id="director1"/>
+	<p></p>
+				<label>Update Film Stars:</label>
+				<input type="text" id="stars1"/>
+				
+				<label>Update Film Review:</label>
+				<input type="text" id="review1"/>
+				
+	<p></p>
+			<!-- The Buttons pass display data to the appripiate js file via onclick name -->
+			<input type="button" value="Update Film"
+			  	onclick='updateFilmToJson("updateFilmToTable", "id1", "title1", "year1", "director1", "stars1", "review1")'/>
+			  
+</form>
+<div id="updateFilmToTable"></div>
+<!-- Div is used to determine the location of where on the results will be diplayed on the browser page -->
+</fieldset>
+	
+</body>
+</html>
